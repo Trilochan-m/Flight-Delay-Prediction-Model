@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flight Delay Prediction</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .left-corner {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Left Corner Data -->
+    <div class="left-corner">
+        <p><strong> FID </strong> <strong> FROM TO </strong></p>
+        <p><small> 1086 </small> DEL - GOI </p>
+        <p><small> 1057 </small> HYD - BOM </p>
+        <p><small> 1083 </small> CCU - BLR </p>
+        <p><small> 1071 </small> GOI - DEL </p>
+        <p><small> 1021 </small> HYD - CCU </p>
+    </div>
+
+    <!-- Center Content -->
+    <div class="container">
+        <h2>Flight Delay Prediction</h2>
+
+        <form action="/predict" method="POST">
+            <input type="number" name="flight_id" placeholder="Enter Flight ID" required><br><br>
+            <input type="text" name="date" placeholder="MM/DD/YYYY" required><br><br>
+            <button type="submit">Predict</button>
+        </form>
+
+        <h3>{{ prediction_text }}</h3>
+    </div>
+
+</body>
+</html>
